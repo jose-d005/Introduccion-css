@@ -1,0 +1,320 @@
+
+/* Que es un selector? Un selector CSS es la primera parte de una regla CSS. Es un patrón de elementos y otros términos 
+que indican al navegador qué elementos HTML se seleccionan para aplicarles una regla que incluye los valores de las propiedades CSS*/
+
+/*Utilizando el simbolo '#' le estamos indicando a CSS que lo que tiene que ir a buscar 
+es un elemento el cual contiene una propiedad de 'id' */
+#titulo {
+    color: tomato;
+}
+
+/*Vamos a indicarle ahora a nuestra pagina utilizando codigo CSS que solamente queremos asginarle un estilo de CSS 
+a las etiquetas de 'p' que tambien contengan la clase de especial */
+p.especial {
+
+    color: blueviolet;
+}
+
+/*Para indicarle a CSS que vamos a utilizar una clase 'class' nosotros vamos autilizar el punto "." 
+seguido de es tenemos que indicar el nombre de la clase y en este caso, el nombre de la clase es texto*/
+
+.marquesina {
+    color: firebrick;
+    /*Mas abajo hablarmeos de esto*/
+    text-decoration: underline;
+    text-shadow: 3px 5px 5px;
+}
+
+p.texto {
+
+    color: aqua;
+}
+/*Aqui le estamos indicando que todas las etiquetas de 'p' que ese encuentren dentro de una etiqueta de 'div'
+se les asigne un estilo*/
+div p {
+    /*Otro detalle.. si se fijan este estilo no se ha aplicado a ninguna otra etiqueta de 'p'
+    a pesar que nosotros lo hemos escrito despues de todas las otras etiquetas y esto es por nuestro selector
+     nosotros solo estamos seleccionando las etiquetas de 'p' que se encuentran dentro de un 'div'  */
+    color: chartreuse;
+}
+/*Aqui estamos asignando un color a un nuevo selector que se encuentran dentro de una eiqueta de 'div', se pueden aplicar varios selectores
+separados por una coma ',' */
+div h2, div h3 {
+
+    color: darkorange;
+}
+
+/*Con este selector aesterisco '*' (selector universal) podremos seleccionar todos los elementos que tengamos dentro de nuestro documento html*/
+/* * {
+/* Ojo con esto: Este selector universal va a aplicar las propiedades
+"solamente" si estas no han sido definidas por otros selectores */
+    /* font-size: 24px;
+    color: black
+} */ 
+/*Existen 2 formas mas de aplicar los colores y esas son hexadecimal y rgb*/
+
+/*
+Hexadecimal
+
+.color {
+
+    color: #ff0000;
+}
+
+rgb
+.color {
+
+    color: rgb(0, 0, 255 );
+}
+*/
+
+/* 'border' se utiliza como su nombre lo indica para colocar bordes
+a nuestros elementos */
+
+.color {
+/* border: 5px red inset ;  */
+
+    /*Alternativas para los bordes
+    dotted
+    dashed
+    solid
+    double
+    groove
+    ridge
+    inset
+    outset
+    none
+    hidden
+    */
+
+    /* Esta propiedad de 'border-style' nos permitira poder asignarle el estilo que va a tener nuestros bordes,
+    sin necesidad de aplicar el ancho ni tampoco el color del borde */
+    border-style: solid ;
+
+    /* Con esta propiedad podremos aplicarle el color de nuestro borde*/
+    border-color: brown;
+
+    /* Con esta propiedad podremos asignarle un borde redondeado a nuestros borde */
+    border-radius: 5px;
+
+    /* Con esta propiedad podremos asignar el ancho que queremos que tenga nuestro borde*/
+    border-width: 1rem;
+
+    /* unidades de medida mas comunes:
+    em, 2 veces el tamaño de la fuente que se esta utilizando, es una medida relativa y puede cambiar dependiendo
+    al elemento que se le aplique o tambien podemos utilizar una mas comun las cual es 'rem' esta es relativa pero
+    al tamaño de la fuente del elemento raiz.
+    px, pixeles
+    in, pulgadas ("inches", en inglés). Una pulgada equivale a 2.54 centímetros.
+    cm, centímetros.
+    mm, milímetros.
+    pt, puntos. Un punto equivale a 1 pulgada/72, es decir, unos 0.35 milímetros.
+    pc, picas. Una pica equivale a 12 puntos, es decir, unos 4.23 milímetros.
+    */
+}
+
+.center {
+    text-align: center;
+}
+
+#fondo {
+
+    /*Con esta propiedad 'rgba' nos permite pasar un opacidad 'opacity', en otras palabras la transparencia o intensidad
+    que va a tener nuetro color*/
+    background-color: rgba(255,0,0);
+    /*opacity: 0.1;*/
+    /*Sirve para colocar la altura de la imagen*/
+    height: 500px;
+    /*Con este background podemos colocar imagenes*/
+    background-image: url('img/W4k.jpg');
+    /*Nos permite redimensionar la imagen que tengamos de fondo, recibiendo distintos valores*/
+    /*Eejmplo: background-size: auto;*/
+    /*1er valor el ancho, 2do valor alto*/
+    background-size: 400px 200px;
+    /*Valores en background-size;
+    auto
+    cover
+    contain
+
+    /*Sirve para que no se repita la imagen, si queremos que la imagen solo se repita en horizontal utilizaremos la 'x'
+    si queremos que se repita en vertical utilizaremos 'y' como un plano cartesiano*/
+    background-repeat: repeat-y;
+    
+    background-position: right top;
+    /*El 1er valor es para decir donde se va a encontrar posicionada en el eje horizontal:
+    center
+    left
+    right
+    
+    El 2do valor es para decir donde se va a encontrar en el eje vertical:
+    top
+    center
+    bottom
+    */   
+
+    /*background, tan secillo como suena, es un atajo rapido y sencillo para escribir todo lo que tenemos arriba
+    en 1 solo elemento*/
+    /*background: #f00 url('img/W4k.jpg') repeat-y center bottom / 400px 200px;*/
+    
+    
+}
+/* Box model es como se posiciona cada elemento html en nuestro documento. Con la propiedad de 'width' solo estamos indicando el ancho del contenido "dentro" nuestra etiqueta
+esto no afectara ni el padding, ni el margin, ni el border.. si queremos calcular el ancho completo de un elemento, tendremos que sumar todos esos valores */
+.margen {
+    background-color: chocolate;
+    /*Con esta propiedad podemos agregar margenes arriba,abajo, izquierda y derecha
+    ejemplo: margin: 15px 20px 25px 30px, el 1ro es el margin top (arriba),
+    el 2do es el margin right (derecha), el 3ro es el margin buttom (abajo) y el utimo margin left (izquierda) */
+    margin: 15px;
+    /*El área de padding es el espacio entre el contenido del elemento y su borde (border)*/
+    padding: 30px 15px 5px;
+    /*La propiedda de border nos ayuda a colocarles bordes al contenido de nuestro elemento*/
+    border: solid 2px black;
+    /*y las propiedades height y width que vimos anteriormente nos serviran para la altura y ancho de nuestros elementos*/
+    height: 200px;
+    width: 50px;
+    /*Esta propiedad define qué se debe mostrar cuando el contenido se desborda de los extremos de un elemento en bloque.
+    Ya sea con auto, hidden, scroll, visible, etc.. */
+    overflow: scroll;
+    /*Esta propiedad es como un borde pero que se coloca fuera del borde pero antes del margin */
+    outline: 1px solid red ;
+}
+
+.text {
+    /*La propiedad de font-family nos permitira cambiar el estilo de fuente a nuestros texos*/
+    font-family:'Roboto', sans-serif;
+    /* Esta propiedad de text-align nos va a servir para que nosotros podamos posicionar y justificar
+    nuestros textos (left, right, center, justify */
+    text-align:center;
+    /*Esta propiedad de text-decoration nos va a servir para que nosotros podamos decorar nuestros textos
+    (underline, overline, line-trough */
+    text-decoration:overline tomato;
+    /*Esta propiedad de text-shadow nos va a servir para que nosotros podamos agregarle un sombreado a nuestros textos..
+    el 1er valor es cuanto se va a mover hacia la derecha (3px), el 2do valor es cuanto se va a mover hacia abajo,
+    el 3er valor es la cantidad de difuminado por asi decirlo */
+    text-shadow: 3px 5px 5px; 
+
+}
+/*Cuando utilizamos el selector de "a:link" va a aplicarles estos estilos a los links que
+no han sido visitados*/
+a:link {
+    color: darkred;
+}
+/*Cuando utilizamos el selector de "a:visited" va a aplicarles estos estilos a los links que
+hayan sido visitados*/
+a:visited {
+    color:aqua;
+}
+/*Cuando utilizamos el selector de "a:hover" va a aplicarles estos estilos a los links a los
+cuales le pasemos el mouse por encima*/
+a:hover {
+    color:deeppink
+}
+/*Cuando utilizamos el selector de "a:active" va a aplicarles estos estilos a los links que pinchamos*/
+a:active {
+    color:khaki
+} /*OJO:El orden en el cual nosotros colocamos estos estilos es sumamente importante*/
+
+.m2 {
+    background-color: brown;
+    /*' list-style-type' sirve para especificar la apariencia del listado*/
+    list-style-type: none;
+    /* padding-left: 0%; */
+    /* list-style-position: inside; */
+}
+
+/*Vamos a crear y agregar ciertos estilos a una tabla 
+*/
+table {
+    width: 100px;
+    border-collapse:collapse ;
+}
+
+th,td {
+    border: solid 1px;
+    padding: 5px;
+}
+
+th {
+    background-color: brown;
+    color: dodgerblue;
+    text-align: left;
+}
+
+/*'nth-child' este selector nos va a permitir seleccionar elementos, sean pares o impares.. 
+'odd' significa par y even significa impar */
+tr:nth-child(even) {
+    background-color: antiquewhite;
+
+}
+
+tr:hover {
+    background-color: #aaa;
+    /*'cursor' esto lo que hara es poner iconos sobre nuestro cursor cuando nosotros pasemos el mouse por encima
+    de nuestra tabla */
+    cursor: pointer;
+}
+/*'display block' lo que hara es forzar que los elementos partan en una nueva linea */
+/* span {
+    display: block;
+} */
+
+span {
+    /*Estos 2 comandos 'display: none' y visibility, nos permitiran ocultar elementos*/
+    /* display: none; */
+    /* visibility: hidden; */
+    display: block;
+    /*La diferencia entre 'width' y max-width es que max-width le va asignar comom maximo el ancho que le demos,
+    a diferencia de width que le va a asignar siempre el ancho*/
+    max-width: 400px;
+    background-color: blueviolet;
+}
+
+/*'display inline' en este caso, los elementos que agreguemos no van a comenzar en una nueva linea */
+.inline {
+    display: inline;
+}
+/*Etiquetas de html que vienen por default con un dislpay de inline son: span,links y la etiqueta de img */
+
+#position {
+    /*La propiedad de "position" nos servira para colocar y ajustar nuestros elementos dentro de nuestra pagina
+    con algunas propiedades como lo son: absolute, fixed, relative, static, sticky*/
+    position: sticky;
+    left: 20px;
+    top: 25px; 
+}
+
+.left {
+    float: left;
+    width: 200px;
+    height: 200px ;
+}
+
+.right {
+    float: right;
+}
+
+.container {
+    height: 200px;
+}
+
+.column {    
+    margin: 0;
+    padding: 10px 0px;
+    width: 33.3%;
+}
+/*Lo que ocurre con los documentos html que tienen una propiedad de display cuyo valor es inline es que no se les puede asignar la propieda de width,
+ni tampoco la propiedad de heigth**/
+.inline-block {
+    display: inline-block;
+    height: 55px;
+    background-color: aqua;
+}
+/*La magia para centrar un elemento, debemos indicarle siempre un ancho*/
+.center {
+    padding: 50px 0;
+    text-align: center;
+    width: 200px;
+    margin: 0 auto;
+    background-color: aqua ;
+}
